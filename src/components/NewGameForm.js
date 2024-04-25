@@ -5,6 +5,10 @@ import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { createGame } from "../NetworkMethods";
+import UserContext from "../context/UserContext";
 
 const difficulties = [
   {
@@ -22,6 +26,9 @@ const difficulties = [
 ];
 
 const NewGameForm = ({ onCreateGame }) => {
+  const navigate = useNavigate();
+  const { authUser } = useContext(UserContext);
+
   const [lives, setLives] = useState(null);
   const [difficultyLevel, setDifficultyLevel] = useState(null);
   const [minimumNum, setMinimumNum] = useState(null);
@@ -52,20 +59,28 @@ const NewGameForm = ({ onCreateGame }) => {
       maximumNum < 1 ||
       maximumNum > 9 ||
       maximumNum < minimumNum ||
-      difficultyLevel === null
+      difficultyLevel === null // Check if difficulty level is not selected
     );
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const newGame = {
       lives: lives,
       difficulty_level: difficultyLevel,
       num_min: minimumNum,
       num_max: maximumNum,
+      client_id: authUser ? authUser.client_id : null,
     };
-
-    // onCreateGame(newGame);
+    const response = await createGame(newGame);
+    if (response.status === 201) {
+      try {
+        const game = response.data.game;
+        game ? navigate(`/games/${game.game_id}`) : navigate("/error");
+      } catch (error) {
+        console.log(error);
+      }
+    }
     setLives("");
     setDifficultyLevel("");
     setMinimumNum("");
@@ -73,9 +88,12 @@ const NewGameForm = ({ onCreateGame }) => {
   };
 
   return (
-    <div className="NewGameForm flex justify-center">
-      <h2>Create a New Game</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-8 max-w-md ">
+    <div className="NewGameForm flex flex-col justify-center max-w-fit m-auto">
+      <h2 className="text-center">Create a New Game</h2>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-8 max-w-md m-auto"
+      >
         <TextField
           error={lives !== null && (lives < 3 || lives > 20)}
           id="lives"

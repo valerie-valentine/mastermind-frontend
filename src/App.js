@@ -14,13 +14,19 @@ import {
   getHint,
   createUser,
   getUser,
-  authenticateUser,
   getAllUserGames,
   deleteUser,
 } from "./NetworkMethods.js";
 import NewGameForm from "./components/NewGameForm.js";
 import Game from "./components/Game.js";
-// import Header from "./components/Header.js";
+import NewUserForm from "./components/NewUserForm.js";
+import LoginForm from "./components/LoginForm.js";
+import UserSignout from "./components/UserSignout.js";
+import Header from "./components/Header.js";
+import Welcome from "./components/Welcome.js";
+import UserProfile from "./components/UserProfile.js";
+import Error from "./components/Error.js";
+import NotFound from "./components/NotFound.js";
 
 function App() {
   const [gamesData, setGamesData] = useState([]);
@@ -36,21 +42,28 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Routes>
+        <Route path="/" element={<Welcome />} />
         <Route
-          path="/new_game"
+          path="new_game"
           element={<NewGameForm onCreateGame={createNewGame} />}
         />
         <Route
           path="games/:id"
           element={<Game getGame={getIndividualGame} />}
         />
+        <Route
+          path="signup"
+          element={<NewUserForm createUser={createUser} />}
+        />
+        <Route path="login" element={<LoginForm />} />
+        <Route path="signout" element={<UserSignout />} />
+        <Route path="profile" element={<UserProfile />} />
+        <Route path="error" element={<Error />} />
+        <Route path="notfound" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <header className="App-header">
-        <h1>Hi</h1>
-        <NewGameForm onCreateGame={createGame} />
-      </header> */}
     </div>
   );
 }

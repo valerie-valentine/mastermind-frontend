@@ -6,7 +6,7 @@ const createGame = (data) => {
   return axios
     .post(`${kBaseUrl}/games`, data)
     .then((response) => {
-      return response.data;
+      return response;
     })
     .catch((error) => {
       console.log(error);
@@ -17,7 +17,7 @@ const getIndividualGame = (gameId) => {
   return axios
     .get(`${kBaseUrl}/games/${gameId}`)
     .then((response) => {
-      return response.data;
+      return response;
     })
     .catch((error) => {
       console.log(error);
@@ -39,10 +39,11 @@ const postGuessToGame = (gameId, data) => {
   return axios
     .post(`${kBaseUrl}/games/${gameId}/guesses`, data)
     .then((response) => {
-      return response.data;
+      return response;
     })
     .catch((error) => {
       console.log(error);
+      return error.response;
     });
 };
 
@@ -79,9 +80,9 @@ const getHint = (gameId) => {
 
 const createUser = (data) => {
   return axios
-    .post(`${kBaseUrl}/users`, data)
+    .post(`${kBaseUrl}/clients`, data)
     .then((response) => {
-      return response.data;
+      return response;
     })
     .catch((error) => {
       console.log(error);
@@ -90,20 +91,9 @@ const createUser = (data) => {
 
 const getUser = (userId) => {
   return axios
-    .get(`${kBaseUrl}/users/${userId}`)
+    .get(`${kBaseUrl}/clients/${userId}`)
     .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-const authenticateUser = (userId, data) => {
-  return axios
-    .post(`${kBaseUrl}/users/${userId}/authentication`, data)
-    .then((response) => {
-      return response.data;
+      return response;
     })
     .catch((error) => {
       console.log(error);
@@ -112,7 +102,7 @@ const authenticateUser = (userId, data) => {
 
 const getAllUserGames = (userId) => {
   return axios
-    .get(`${kBaseUrl}/users/${userId}/games`)
+    .get(`${kBaseUrl}/clients/${userId}/games`)
     .then((response) => {
       return response.data;
     })
@@ -123,7 +113,7 @@ const getAllUserGames = (userId) => {
 
 const deleteUser = (userId) => {
   return axios
-    .delete(`${kBaseUrl}/users/${userId}`)
+    .delete(`${kBaseUrl}/clients/${userId}`)
     .then(() => null)
     .catch((error) => {
       console.log(error);
@@ -141,7 +131,6 @@ export {
   getHint,
   createUser,
   getUser,
-  authenticateUser,
   getAllUserGames,
   deleteUser,
 };
