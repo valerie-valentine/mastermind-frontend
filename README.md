@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+
+# Mastermind
+
+## Mastermind Site Overview
+
+The Mastermind site serves as a way to play the Mastermind code-breaking game. There are 3 pre-set difficulty levels (easy, medium, hard), options to the of digits in the code, as well as the number of lives (max 20). Users will be receive feedback upon each guess and able to see their previous guesses.
+
+## Prequisites
+- yarn
+
+## Additional Feautures
+- Customizable difficulties (easy code = 4, medium code = 6, hard=8). 
+- Users are able to choose from what range they would like the numbers to be generated from (i.e: 0-4 -> 0404). 
+- Users are able to customize how many lives may be played (no less than 3 or more than 20). 
+- Option to login/create a user profile that can save the games played and allow you to continue unfinished games, and view your past games data. 
+- Ability to see previous guesses, instructions and feedback of guess. 
+- Leaderboard that displays the top 10 players based off of most games won. 
+- Ability for a user to delete a game or user account. 
+- Ability to store and retrieve hashed passwords. 
+
+Note: There is logic in the frontend to mitigate bad inputs, as well as logic on the backend to verify inputs and deals with errors.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
