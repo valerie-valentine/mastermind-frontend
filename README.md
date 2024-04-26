@@ -3,7 +3,7 @@
 
 ## Mastermind Site Overview
 
-The Mastermind site serves as a way to play the Mastermind code-breaking game. There are 3 pre-set difficulty levels (easy, medium, hard), options to the of digits in the code, as well as the number of lives (max 20). Users will be receive feedback upon each guess and able to see their previous guesses.
+The Mastermind site serves as a way to play the Mastermind code-breaking game. There are 3 pre-set difficulty levels (easy, medium, hard), options to choose the range of digits in the code (i.e. 0-4 -> 0404), as well as the number of lives (max 20). Users will be receive feedback upon each guess and able to see their previous guesses.
 
 ## Prequisites
 - yarn
