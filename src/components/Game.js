@@ -243,7 +243,7 @@ const Game = () => {
       <div
         id="feedback"
         className={`mb-6 text-lg ${error && "text-red-500"} ${
-          hint && "text-green-500"
+          hint && "text-teal-500"
         }`}
       >
         {<p>{gameData && feedback(gameData.guesses)}</p>}
