@@ -94,6 +94,9 @@ export default function Header() {
         <Button color="inherit" onClick={() => navigate("/new_game")}>
           New Game
         </Button>
+        <Button color="inherit" onClick={() => navigate("/score_board")}>
+          Score Board
+        </Button>
         <div>
           <IconButton
             size="large"

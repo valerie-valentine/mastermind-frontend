@@ -27,6 +27,7 @@ import Welcome from "./components/Welcome.js";
 import UserProfile from "./components/UserProfile.js";
 import Error from "./components/Error.js";
 import NotFound from "./components/NotFound.js";
+import ScoreBoard from "./components/ScoreBoard.js";
 
 function App() {
   const [gamesData, setGamesData] = useState([]);
@@ -60,6 +61,7 @@ function App() {
         <Route path="login" element={<LoginForm />} />
         <Route path="signout" element={<UserSignout />} />
         <Route path="profile" element={<UserProfile />} />
+        <Route path="score_board" element={<ScoreBoard />} />
         <Route path="error" element={<Error />} />
         <Route path="notfound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

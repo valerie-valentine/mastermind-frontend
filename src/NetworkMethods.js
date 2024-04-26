@@ -61,7 +61,9 @@ const getAllGuessesForGame = (gameId) => {
 const deleteGame = (gameId) => {
   return axios
     .delete(`${kBaseUrl}/games/${gameId}`)
-    .then(() => null)
+    .then((response) => {
+      return response;
+    })
     .catch((error) => {
       console.log(error);
     });
@@ -114,7 +116,20 @@ const getAllUserGames = (userId) => {
 const deleteUser = (userId) => {
   return axios
     .delete(`${kBaseUrl}/clients/${userId}`)
-    .then(() => null)
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const getTopPlayers = () => {
+  return axios
+    .get(`${kBaseUrl}/clients/top_players`)
+    .then((response) => {
+      return response;
+    })
     .catch((error) => {
       console.log(error);
     });
@@ -133,4 +148,5 @@ export {
   getUser,
   getAllUserGames,
   deleteUser,
+  getTopPlayers,
 };
