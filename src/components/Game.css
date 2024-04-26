@@ -200,7 +200,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #959fd0;
 }
 
 .start a {
@@ -231,4 +231,8 @@ button {
 .submit-button:disabled, .key:disabled {
   background-color: #D2D2D2;
   color: #fff;
+}
+
+.heart-lives {
+  filter: hue-rotate(160deg);
 }

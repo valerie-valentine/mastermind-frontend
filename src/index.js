@@ -5,13 +5,28 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { pink } from "@mui/material/colors";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: pink[300],
+    },
+    secondary: {
+      main: "#f44336",
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

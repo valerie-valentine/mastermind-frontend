@@ -65,6 +65,7 @@ const NewGameForm = ({ onCreateGame }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(lives, difficultyLevel, minimumNum, maximumNum);
     const newGame = {
       lives: lives,
       difficulty_level: difficultyLevel,

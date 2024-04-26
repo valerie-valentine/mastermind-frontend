@@ -2,7 +2,7 @@ import "./Game.css";
 import { useState, useRef, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import { getIndividualGame, postGuessToGame } from "../NetworkMethods";
+import { getIndividualGame, postGuessToGame, getHint } from "../NetworkMethods";
 import UserContext from "../context/UserContext";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -36,6 +36,7 @@ const Game = () => {
   const [guess, setGuess] = useState([...Array(4).fill(null)]);
   const [gameData, setGameData] = useState(null);
   const [error, setError] = useState(null);
+  const [hint, setHint] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const handleModalOpen = () => setModalOpen(true);
@@ -45,6 +46,9 @@ const Game = () => {
   const feedback = (guesses) => {
     if (error) {
       return error;
+    }
+    if (hint) {
+      return hint;
     }
     if (guesses.length === 0) {
       return "No guesses made yet.";
@@ -107,12 +111,13 @@ const Game = () => {
   };
 
   const handleSubmitGuess = async () => {
-    const guessData = { guess: guess.join(""), client_id: authUser.client_id };
+    const guessData = { guess: guess.join("") };
     try {
-      const res = await postGuessToGame(id, guessData);
+      const res = await postGuessToGame(gameData.game_id, guessData);
       if (res.status === 201) {
         setGameData(res.data.game);
         setError(null);
+        setHint(null);
         setGuess([...Array(res.data.game.difficulty_level).fill(null)]);
       } else if (res.status === 400) {
         setError(res.data.details);
@@ -133,6 +138,11 @@ const Game = () => {
     }
     guessCopy[emptyIndex - 1] = null;
     setGuess(guessCopy);
+  };
+
+  const handleHint = async () => {
+    const res = await getHint(gameData.game_id);
+    setHint(res.hint);
   };
 
   return (
@@ -158,6 +168,7 @@ const Game = () => {
       </div>
 
       <div>
+        <Button onClick={handleHint}>Hint</Button>
         <Button onClick={handleModalOpen}>Past Guesses</Button>
         <Modal
           open={modalOpen}
@@ -229,8 +240,13 @@ const Game = () => {
           })}
         </ul>
       </div>
-      <div id="feedback" className={`mb-6 text-lg ${error && "text-red-500"}`}>
-        <p>{gameData && feedback(gameData.guesses)}</p>
+      <div
+        id="feedback"
+        className={`mb-6 text-lg ${error && "text-red-500"} ${
+          hint && "text-green-500"
+        }`}
+      >
+        {<p>{gameData && feedback(gameData.guesses)}</p>}
       </div>
 
       <div id="qwerty" className="section flex justify-center">
@@ -281,6 +297,7 @@ const Game = () => {
                   <img
                     src="../liveHeart.png"
                     alt="Heart Icon"
+                    className="heart-lives"
                     height="35"
                     width="30"
                   />
@@ -307,3 +324,7 @@ const Game = () => {
 };
 
 export default Game;
+
+{
+  /* <p>{gameData && feedback(gameData.guesses)}</p> */
+}
