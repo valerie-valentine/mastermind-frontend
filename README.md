@@ -16,7 +16,6 @@ The Mastermind site serves as a way to play the Mastermind code-breaking game. T
 - Ability to see previous guesses, instructions and feedback of guess. 
 - Leaderboard that displays the top 10 players based off of most games won. 
 - Ability for a user to delete a game or user account. 
-- Ability to store and retrieve hashed passwords. 
 - Ability to view a hint
 
 Note: There is logic in the frontend to mitigate bad inputs, as well as logic on the backend to verify inputs and deals with errors.
