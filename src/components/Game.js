@@ -168,7 +168,14 @@ const Game = () => {
       </div>
 
       <div>
-        <Button onClick={handleHint}>Hint</Button>
+        <Button
+          disabled={
+            gameData && gameData.guesses && gameData.guesses.length === 0
+          }
+          onClick={handleHint}
+        >
+          Hint
+        </Button>
         <Button onClick={handleModalOpen}>Past Guesses</Button>
         <Modal
           open={modalOpen}
