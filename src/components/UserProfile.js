@@ -99,6 +99,7 @@ const UserProfile = () => {
                   <TableCell align="center">Lives</TableCell>
                   <TableCell align="center">Min Number</TableCell>
                   <TableCell align="center">Max Number</TableCell>
+                  <TableCell align="center">Date Created</TableCell>
                   <TableCell align="center">Status</TableCell>
                   <TableCell align="center"></TableCell>
                 </TableRow>
@@ -124,6 +125,7 @@ const UserProfile = () => {
                       <TableCell align="center">{row.lives}</TableCell>
                       <TableCell align="center">{row.num_min}</TableCell>
                       <TableCell align="center">{row.num_max}</TableCell>
+                      <TableCell align="center">{row.timestamp}</TableCell>
                       <TableCell align="center">{row.game_status}</TableCell>
                       <TableCell
                         align="center"
