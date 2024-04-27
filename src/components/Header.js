@@ -84,7 +84,7 @@ export default function Header() {
                 A random number from 0-9 will be generated based on the level
                 you've chosen.
               </p>
-              <p> You will have 10 attempts to guess the number.</p>
+              <p>You will have between 3 to 20 attempts to guess the number.</p>
               <p>Hints will be provided to help you along the way.</p>
               <p>Good luck!</p>
             </Typography>
