@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mastermin-frontend/static/css/main.288349f1.css",
-    "main.js": "/mastermin-frontend/static/js/main.f03b088a.js",
+    "main.js": "/mastermin-frontend/static/js/main.dd4fa618.js",
     "static/js/453.1d80d775.chunk.js": "/mastermin-frontend/static/js/453.1d80d775.chunk.js",
     "index.html": "/mastermin-frontend/index.html",
     "main.288349f1.css.map": "/mastermin-frontend/static/css/main.288349f1.css.map",
-    "main.f03b088a.js.map": "/mastermin-frontend/static/js/main.f03b088a.js.map",
+    "main.dd4fa618.js.map": "/mastermin-frontend/static/js/main.dd4fa618.js.map",
     "453.1d80d775.chunk.js.map": "/mastermin-frontend/static/js/453.1d80d775.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.288349f1.css",
-    "static/js/main.f03b088a.js"
+    "static/js/main.dd4fa618.js"
   ]
 }
