@@ -93,7 +93,7 @@ const Game = () => {
       gameOverMessage.current.textContent =
         gameData.game_status === "Win"
           ? "Congrats, you won! 🎉"
-          : "Sorry, you lost! 😢";
+          : `Sorry, you lost! 😢 The answer was: ${gameData.answer}`;
     }
   }, [gameData]);
 
