@@ -111,7 +111,12 @@ const Game = () => {
   };
 
   const handleSubmitGuess = async () => {
-    const guessData = { guess: guess.join("") };
+    const guessData =
+      authUser && authUser.client_id
+        ? { guess: guess.join(""), client_id: authUser.client_id }
+        : { guess: guess.join("") };
+
+    // const guessData = { guess: guess.join("") };
     try {
       const res = await postGuessToGame(gameData.game_id, guessData);
       if (res.status === 201) {
