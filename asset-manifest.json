@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mastermin-frontend/static/css/main.288349f1.css",
-    "main.js": "/mastermin-frontend/static/js/main.12abb6cd.js",
-    "static/js/453.1d80d775.chunk.js": "/mastermin-frontend/static/js/453.1d80d775.chunk.js",
-    "index.html": "/mastermin-frontend/index.html",
-    "main.288349f1.css.map": "/mastermin-frontend/static/css/main.288349f1.css.map",
-    "main.12abb6cd.js.map": "/mastermin-frontend/static/js/main.12abb6cd.js.map",
-    "453.1d80d775.chunk.js.map": "/mastermin-frontend/static/js/453.1d80d775.chunk.js.map"
+    "main.css": "/mastermind-frontend/static/css/main.288349f1.css",
+    "main.js": "/mastermind-frontend/static/js/main.50e4a0d1.js",
+    "static/js/453.1d80d775.chunk.js": "/mastermind-frontend/static/js/453.1d80d775.chunk.js",
+    "index.html": "/mastermind-frontend/index.html",
+    "main.288349f1.css.map": "/mastermind-frontend/static/css/main.288349f1.css.map",
+    "main.50e4a0d1.js.map": "/mastermind-frontend/static/js/main.50e4a0d1.js.map",
+    "453.1d80d775.chunk.js.map": "/mastermind-frontend/static/js/453.1d80d775.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.288349f1.css",
-    "static/js/main.12abb6cd.js"
+    "static/js/main.50e4a0d1.js"
   ]
 }
