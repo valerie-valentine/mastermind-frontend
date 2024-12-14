@@ -28,6 +28,7 @@ import UserProfile from "./components/UserProfile.js";
 import Error from "./components/Error.js";
 import NotFound from "./components/NotFound.js";
 import ScoreBoard from "./components/ScoreBoard.js";
+import SplashPage from "./components/SplashPage.js";
 
 function App() {
   const [gamesData, setGamesData] = useState([]);
@@ -45,7 +46,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/" element={<SplashPage />} />
         <Route
           path="new_game"
           element={<NewGameForm onCreateGame={createNewGame} />}

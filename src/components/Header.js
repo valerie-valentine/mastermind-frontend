@@ -8,6 +8,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import Button from "@mui/material/Button";
 import UserContext from "../context/UserContext";
@@ -42,6 +43,13 @@ export default function Header() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const location = useLocation();
+
+  // Conditionally render header based on current location
+  if (location.pathname === "/") {
+    return null;
+  }
 
   return (
     <AppBar>

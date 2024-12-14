@@ -1,0 +1,144 @@
+/* Container for centering */
+.flicker-container {
+    display: flex;
+    flex-direction: column; /* Ensure items are stacked vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #bcbdc1; /* Black background */
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Base text styling */
+  .flicker-text {
+    position: relative;
+    font-size: 5rem;
+    font-family: "Courier New", monospace; /* Retro computer font */
+    font-weight: bold;
+    color: #fff; /* White base color */
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #eb6299, 0 0 10px #eb6299, 0 0 20px #eb6299;
+    animation: flicker 1.5s infinite, glitch-color 3s infinite;
+  }
+  
+  /* Glitching text effect using pseudo-elements */
+  .flicker-text::before,
+  .flicker-text::after {
+    content: "Mastermind"; /* Duplicate text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ff0055; /* Red layer */
+    opacity: 0.7;
+    clip-path: inset(0 0 50% 0); /* Randomly clip top half */
+    animation: glitch 2s infinite;
+  }
+  
+  .flicker-text::after {
+    color: #c75c88; /* Blue layer */
+    clip-path: inset(50% 0 0 0); /* Randomly clip bottom half */
+    animation: glitch 2.5s infinite;
+  }
+  
+  /* Flicker keyframes */
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 24%, 55% {
+      opacity: 0.4;
+    }
+  }
+  
+  /* Random glitch positioning */
+  @keyframes glitch {
+    0% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-2px, -2px);
+    }
+    20% {
+      transform: translate(3px, 1px);
+    }
+    30% {
+      transform: translate(-3px, -1px);
+    }
+    40% {
+      transform: translate(2px, -2px);
+    }
+    50% {
+      transform: translate(-1px, 3px);
+    }
+    60% {
+      transform: translate(1px, -3px);
+    }
+    70% {
+      transform: translate(-2px, 2px);
+    }
+    80% {
+      transform: translate(3px, -1px);
+    }
+    90% {
+      transform: translate(-1px, 1px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  /* Subtle color shift */
+  @keyframes glitch-color {
+    0%, 50%, 100% {
+      text-shadow: 0 0 5px #ce4b61, 0 0 10px #ce4b61, 0 0 20px #ce4b61;
+    }
+    25% {
+      text-shadow: 0 0 5px #ff0055, 0 0 10px #ff0055, 0 0 20px #ff0055;
+    }
+    75% {
+      text-shadow: 0 0 5px #00ffee69, 0 0 10px #00ffee69, 0 0 20px #00ffee69;
+    }
+  }
+  
+  /* Subtle flicker effect for the button (red) */
+  .flicker-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #ce4b61; /* Red button background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 5px #ff0055, 0 0 10px #ff0055;
+    animation: flicker-button 2s infinite;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add space between the text and button */
+  }
+  
+  /* Button hover effect */
+  .flicker-button:hover {
+    background-color: #ff3385;
+  }
+  
+  /* Subtle flicker animation for the button */
+  @keyframes flicker-button {
+    0%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+  
+  
+  
+  
+  
+  

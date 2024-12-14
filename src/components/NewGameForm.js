@@ -73,6 +73,7 @@ const NewGameForm = ({ onCreateGame }) => {
       client_id: authUser ? authUser.client_id : null,
     };
     const response = await createGame(newGame);
+    // have a guard clause to check if response is undefined and then handle and navigate to error page
     if (response.status === 201) {
       try {
         const game = response.data.game;
