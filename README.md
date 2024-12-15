@@ -8,6 +8,9 @@ The Mastermind site serves as a way to play the Mastermind code-breaking game. T
 
 **Check out the Website: Deployment coming soon!**
 
+## Updates:
+-  Added a landing page for site
+
 ## Prequisites
 - yarn
 
@@ -22,6 +25,27 @@ The Mastermind site serves as a way to play the Mastermind code-breaking game. T
 - Ability to view a hint
 
 Note: There is logic in the frontend to mitigate bad inputs, as well as logic on the backend to verify inputs and deals with errors.
+
+## How to Run:
+### Prerequisites
+
+Before running the application, ensure you have the following installed:
+
+    - Node.js (LTS version recommended)
+    - Yarn (Package manager)
+    - Backend server running at http://localhost:5000 (or update the URL accordingly in the .env file)
+  
+
+Create a .env file in the mastermind folder and add the following line:
+```bash
+REACT_APP_BACKEND_URL=http://localhost:5000
+```
+Start the React app:
+```bash
+yarn start
+```
+
+### 
 
 ## Getting Started with Create React App
 
