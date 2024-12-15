@@ -58,7 +58,7 @@ export default function Header() {
           <Button
             color="inherit"
             className="text-xl"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/welcome")}
           >
             Mastermind
           </Button>
