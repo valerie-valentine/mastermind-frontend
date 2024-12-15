@@ -34,3 +34,5 @@ Start the React app:
 ```bash
 yarn start
 ```
+### Future Updates
+I would like to extend to realtime multi-player and include a timer that visually displays.
