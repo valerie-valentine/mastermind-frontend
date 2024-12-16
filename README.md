@@ -5,10 +5,10 @@
 
 The Mastermind site serves as a way to play the Mastermind code-breaking game. There are 3 pre-set difficulty levels (easy, medium, hard), options to choose the range of digits in the code (i.e. 0-4 -> 0404), as well as the number of lives (max 20). Users will be able to receive feedback upon each guess, generate a hint or view previous guesses.
 
-**Check out the Website: Deployment coming soon!**
+**Check out the Website: [Mastermind](https://valerie-valentine.github.io/mastermind-frontend)!**
 
 ## Updates:
--  Added a landing page for site
+-  Added a landing page for site (not on deployed version yet)
 
 ## Additional Feautures
 - Customizable difficulties (easy code = 4, medium code = 6, hard=8). 
